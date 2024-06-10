@@ -1,0 +1,8 @@
+{
+    "development": {
+        "secret": "secret"
+    },
+    "production": {
+        "secret": "prodsecret"
+    }
+}

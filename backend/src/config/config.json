@@ -1,0 +1,32 @@
+{
+    "development": {
+        "type": "postgres",
+        "database": "db",
+        "username": "postgres",
+        "password": "qwerty",
+        "schema": "public",
+        "host": "localhost",
+        "port": 5432,
+        "synchronize": true,
+        "logging": false,
+        "migrationsRun": false,
+        "migrations": [
+            "./dist/migration/**/*.js"
+        ]
+    },
+    "production": {
+        "type": "postgres",
+        "database": "db",
+        "username": "postgres",
+        "password": "prodqwerty",
+        "schema": "public",
+        "host": "localhost",
+        "port": 5432,
+        "synchronize": true,
+        "logging": false,
+        "migrationsRun": false,
+        "migrations": [
+            "./dist/migration/**/*.js"
+        ]
+    }
+}
