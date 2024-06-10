@@ -1,16 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage("Building") {
-                service: {
-                  dir('backend') {
-                    steps {
-                      sh 'npm install'
-                      sh 'npm run build'
-                    }
+        stage('Building') {
+            steps {
+                dir('backend') {
+                    sh 'npm install'
+                    sh 'npm run build'
                     jsObfuscate('dist')
-                  }
                 }
+            }
         }
     }
 }
