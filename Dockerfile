@@ -1,6 +1,10 @@
 FROM jenkins/jenkins:2.452.1-jdk17
 USER root
 RUN apt-get update && apt-get install -y lsb-release
+RUN apt-get install -y curl \
+  && curl -sL https://deb.nodesource.com/setup_18.x | bash - \
+  && apt-get install -y nodejs \
+  && curl -L https://www.npmjs.com/install.sh | sh
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
   https://download.docker.com/linux/debian/gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) \

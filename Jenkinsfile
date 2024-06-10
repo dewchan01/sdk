@@ -6,7 +6,6 @@ pipeline {
                 dir('backend') {
                     sh 'npm install'
                     sh 'npm run build'
-                    jsObfuscate('dist')
                 }
             }
         }
