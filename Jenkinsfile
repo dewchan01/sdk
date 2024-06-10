@@ -1,13 +1,20 @@
 pipeline {
     agent any
-    tools(nodejs "node")
+
     stages {
         stage('Building') {
             steps {
                 dir('backend') {
-                    sh 'npm install'
-                    sh 'npm run build'
-                    jsObfuscate('dist')
+                    script {
+                        if (!isPluginActive('nodejs')) {
+                            error 'NodeJS plugin is not installed, please install it'
+                        }
+                    }
+                    withNodeJS('node') {
+                        sh 'npm install'
+                        sh 'npm run build'
+                        jsObfuscate(script: 'dist')
+                    }
                 }
             }
         }
