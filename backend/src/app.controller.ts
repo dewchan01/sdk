@@ -10,7 +10,7 @@ import {
 } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { EmptyDto } from './empty.dto';
-import { JwtAuthGuard } from './auth/jwt-auth.guard';
+import { JwtAuthGuard } from './auth/guard/jwt-auth.guard';
 
 @ApiTags('Version')
 @Controller('api')

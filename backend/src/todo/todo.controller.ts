@@ -17,7 +17,7 @@ import { UpdateTodoDto } from './dto/update-todo.dto';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common/pipes/validation.pipe';
 import { Todo } from '../data-access/todo-data/todo-data.entity';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 
 @Controller('todos')
 @ApiTags('Todos')

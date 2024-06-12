@@ -36,7 +36,7 @@ export class ConfigService {
   }
 
   public get serverPort(): number {
-    return Number(process.env.APP_PORT || this.serverConfig.port || 3201);
+    return Number(process.env.APP_PORT || this.serverConfig.port || 3200);
   }
 
   public get dbConfig(): IDBConfig {
